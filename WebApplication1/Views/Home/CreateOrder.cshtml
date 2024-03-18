@@ -1,0 +1,35 @@
+﻿@model RitualServer.Model.Shipment
+
+<div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="orderModalLabel">Оформление заказа</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="CreateOrder" method="post">
+                    <input type="hidden" id="productId" name="productId" />
+                    <div class="form-group">
+                        <label asp-for="ShipmentDate" for="date">Дата</label>
+                        <input type="date" class="form-control" required asp-for="ShipmentDate"
+                               min="@DateTime.Today.ToString("yyyy-MM-dd")">
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Address">Адрес</label>
+                        <input type="text" asp-for="Address" class="form-control" required>
+                    </div>
+@*                     <div class="form-group">
+                        <label for="phone">Номер телефона</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required>
+                    </div> *@
+                    <div class="form-group text-center mt-4">
+                        <button type="submit" class="btn btn-primary float-left">Отправить</button> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+﻿@model IEnumerable<RitualServer.Model.Product>
+@{
+    ViewBag.Title = "Продукты";
+}
+<table class="table">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            
+        </tr>
+    }
+</table>
